@@ -5,3 +5,19 @@
 ```
 snap version
 ```
+### If the version for snapd is earlier than 2.59, or if the snap version command returns an error, run the following commands to install the latest version of snapd:
+```
+sudo apt update
+sudo apt install snapd
+```
+### 2.Enter the following command to install LXD:
+```
+sudo snap install lxd
+```
+### 3.Enter the following command to initialise LXD:
+```
+lxd init
+```
+### Accept the default values except for the following questions:
+*Size in GiB of the new loop device (1GiB minimum)
+Enter 40GiB*
