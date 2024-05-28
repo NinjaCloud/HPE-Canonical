@@ -1,4 +1,13 @@
 # Install and initialise LXD
+
+## INSTALLATION & CONFIGURATION
+## Launching Instances on AWS with below configurations
++ 1 Instances of ***i3.metal*** instance with OS version ***Ubuntu 22.04*** LTS in your preferred region.
++ Storage: 110 GB
++ create new Security group
++ Type: All traffic
++ Source type: Anywhere
+
 ## Complete the following steps to install and initialise LXD:
 ### 1.Install snapd:
 ### Run snap version to find out if snap is installed on your system:
