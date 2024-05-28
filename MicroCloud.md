@@ -21,5 +21,6 @@ lxd init
 ### Accept the default values except for the following questions:
 *Size in GiB of the new loop device (1GiB minimum)*
 ***Enter 40GiB***
+
 *Would you like the LXD server to be available over the network? (yes/no)*
 ***Enter yes***
