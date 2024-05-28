@@ -274,4 +274,24 @@ ping <IPv4_address_of_u2>
 https://<PublicIP>:8443
 ```
 
+# Certificate selection in the LXD UI
+
+## If you don’t see the certificate screen, you might have an older version of LXD (run snap info lxd to check). In this case, run the following commands on the machine that you’re trying to access (for example, micro1) to enable the UI:
+```
+snap set lxd ui.enable=true
+systemctl reload snap.lxd.daemon
+```
+
+## If you create a new certificate, you must transfer it to one of the cluster members to add it to the trust store.
+## To do this, use the file push command. For example:
+```
+lxc file push lxd-ui.crt micro1/root/lxd-ui.crt
+```
+## You can then access the shell on that cluster member and add the certificate to the trust store:
+```
+lxc exec micro1 -- bash
+lxc config trust add lxd-ui.crt
+```
+## You can now browse the UI and inspect, for example, the instances you created and the networks and storage that MicroCloud set up.
+
 
