@@ -96,7 +96,7 @@ export APIKEY=$(maas apikey --username admin)
 
 ## MAAS admin login
 ```
-maas login admin 'http://{PUBLIC_IP_ADDRESS}:5240/MAAS/' $APIKEY
+maas login admin 'http://${PUBLIC_IP_ADDRESS}:5240/MAAS/' $APIKEY
 ```
 
 ## Configure MAAS networking (set gateways, vlans, DHCP on etc)
