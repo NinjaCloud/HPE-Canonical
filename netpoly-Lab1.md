@@ -104,4 +104,13 @@ wget -q --timeout=5 nginx -O -
 
 ### However, we still cannot access the service from a pod without the label run-access
 
+### Now create a pod with label attatched and check the connectivity 
+```
+kubectl run --namespace=policy-demo access --rm -ti --image busybox -l run=access /bin/sh
+```
+```
+wget -q --timeout=5 nginx -O -
+```
+
+
 
