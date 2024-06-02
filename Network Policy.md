@@ -206,3 +206,25 @@ It is not able to access other than mentioned in the EgressPolicy
 ```
 exit
 ```
+
+
+## calicoctl configration for microK8s
+
+### Install and configure calicoctl. This will allows us to create, read, update, and delete Calico objects from the command line. Before apply make sure calico version and cluster version both are same
+
+```
+microk8s kubectl apply -f https://docs.projectcalico.org/manifests/calicoctl.yaml
+```
+### Run the kubectl command below output of the calico profiles
+```
+kubectl exec -ti -n kube-system calicoctl -- /calicoctl get profiles -o wide
+```
+
+### Create alias to the command above
+```
+alias calicoctl="microk8s kubectl exec -i -n kube-system calicoctl -- /calicoctl"
+```
+### confirm that calicoctl is working fine by running following command:
+```
+calicoctl ipam list
+```
