@@ -44,6 +44,10 @@ echo iptables-persistent iptables-persistent/autosave_v6 boolean true | sudo deb
 ## Create a lxd.cfg file on ec2 instance and copy following content inside the file
 
 ```
+vi lxd.cfg
+```
+
+```
 config:
   core.https_address: '[::]:8443'
   core.trust_password: password
