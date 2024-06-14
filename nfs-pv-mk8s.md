@@ -17,7 +17,7 @@ sudo chmod 0777 /srv/nfs
 ### Edit the /etc/exports file. Make sure that the IP addresses of all your MicroK8s nodes are able to mount this share. For example, to allow all IP addresses in the 10.0.0.0/24 subnet: in our case we will use private ip of our host/subnet
 ```
 sudo mv /etc/exports /etc/exports.bak
-echo '/srv/nfs {privateIP/subnet}(rw,sync,no_subtree_check)' | sudo tee /etc/exports
+echo '/srv/nfs <privateIP/subnet>(rw,sync,no_subtree_check)' | sudo tee /etc/exports
 ```
 
 ### Finally, restart the NFS server:
