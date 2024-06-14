@@ -28,9 +28,9 @@ sudo snap install maas-test-db
 ```
 export IP_ADDRESS=$(ip -j route show default | jq -r '.[].prefsrc')
 export INTERFACE=$(ip -j route show default | jq -r '.[].dev')
-sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/' /etc/sysctl.conf
-sysctl -p
-iptables -t nat -A POSTROUTING -o $INTERFACE -j SNAT --to $IP_ADDRESS
+sudo sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/' /etc/sysctl.conf
+sudo sysctl -p
+sudo iptables -t nat -A POSTROUTING -o $INTERFACE -j SNAT --to $IP_ADDRESS
 ```
 
 ## Persist NAT configuration
@@ -89,18 +89,18 @@ cat lxd.cfg | lxd init --preseed
 
 ## Initialise MAAS
 ```
-maas init region+rack --database-uri maas-test-db:/// --maas-url http://${PUBLIC_IP_ADDRESS}:5240/MAAS
+sudo maas init region+rack --database-uri maas-test-db:/// --maas-url http://${PUBLIC_IP_ADDRESS}:5240/MAAS
 ```
 
 ## Create MAAS admin and grab API key
 ```
-maas createadmin --username admin --password admin --email admin
+sudo maas createadmin --username admin --password admin --email admin
 export APIKEY=$(maas apikey --username admin)
 ```
 
 ## MAAS admin login
 ```
-maas login admin 'http://${PUBLIC_IP_ADDRESS}:5240/MAAS/' $APIKEY
+sudo maas login admin 'http://${PUBLIC_IP_ADDRESS}:5240/MAAS/' $APIKEY
 ```
 
 ## Configure MAAS networking (set gateways, vlans, DHCP on etc)
