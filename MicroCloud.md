@@ -285,7 +285,7 @@ https://<PublicIP>:8443
 
 # Certificate selection in the LXD UI
 
-## If you don’t see the certificate screen, you might have an older version of LXD (run snap info lxd to check). In this case, run the following commands on the machine that you’re trying to access (for example, micro1) to enable the UI:
+## If you don’t see the certificate screen, you might have an older version of LXD (run snap info lxd to check). In this case, run the following commands on the machine that you’re trying to access (for example, i3.metal insatnce) to enable the UI:
 ```
 snap set lxd ui.enable=true
 systemctl reload snap.lxd.daemon
