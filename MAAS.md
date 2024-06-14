@@ -117,7 +117,7 @@ maas admin maas set-config name=upstream_dns value=8.8.8.8
 
 ## Add LXD as a VM host for MAAS
 ```
-maas admin vm-hosts create  password=password  type=lxd power_address=https://${IP_ADDRESS}:8443 project=maas
+maas admin vm-hosts create  password=password  type=lxd power_address=https://${Public_IP_ADDRESS}:8443 project=maas
 ```
 
 ## Automatically create and add ssh keys to MAAS
