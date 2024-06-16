@@ -1,4 +1,4 @@
-# OnMicrok8s Cluster
+# On Microk8s Cluster
 
 ### Enable the community add-on repository in MicroK8s.
 ```
