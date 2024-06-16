@@ -90,6 +90,84 @@ echo hello > demo.txt
 
 ### Expected output "sh: can't create demo.txt: Permission denied"
 
+
+# TASK 2  
+
+## set up an AppArmor profile on your Kubernetes cluster, enforcing a denial rule to write access to /tmp/ while allowing write access to other directories on your Kubernetes worker node
+
+###  create the AppArmor profile configuration file:
+```
+sudo vi  /etc/apparmor.d/deny-tmp-profile
+```
+
+### Add the following profile configuration to deny write access to /tmp/ and allow write access to other directories:
+
+```
+#include <tunables/global>
+
+profile k8s-apparmor-deny-tmp {
+  #include <abstractions/base>
+  
+  # Deny write access to /tmp/
+  /tmp/** rw,
+  
+  # Allow write access to other directories
+  /** rw,
+}
+```
+
+### Parse/Load the AppArmor profile into the kernel:
+
+sudo apparmor_parser -r /etc/apparmor.d/deny-tmp-profile
+
+### Check the status of the AppArmor profile to confirm the denial /tmp/ rule:
+```
+sudo aa-status 
+```
+
+### Create a YAML file named secure-pod2.yaml and edit it:
+```
+vi secure-pod2.yaml
+```
+
+### Add the following configuration to the YAML file to define a secure pod:
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: secure-app2
+  annotations:
+    container.apparmor.security.beta.kubernetes.io/ctr-1: localhost/k8s-apparmor-deny-tmp
+spec:
+  nodeName: <worker-node-name>
+  containers:
+  - name: ctr-1
+    image: busybox
+    command: ["sh", "-c", "sleep 5000"]
+```
+
+### Replace <worker-node-name> with the name of your Kubernetes worker node.
+
+### Apply the YAML file to create the secure pod:
+```
+kubectl apply -f secure-app2.yaml
+```
+
+### Access the shell of the secure pod:
+```
+kubectl exec -it secure-app2 -- sh
+```
+
+### Attempt to create a file inside the pod:
+```
+vi /tmp/demo.txt
+```
+
+### You should receive a "Permission denied" error due to the AppArmor profile denying file writes into /tmp/.
+
+### Try to create file other than /tmp dir .
+
 ### You should receive a "Permission denied" error due to the AppArmor profile denying file writes.
 
 ### Exit the shell of the pod:
