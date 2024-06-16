@@ -201,3 +201,15 @@ sudo systemctl disable apparmor.service
 sudo systemctl enable apparmor.service
 sudo systemctl start apparmor.service
 ```
+
+## Set the Profile to Complaining Mode
+```
+sudo aa-complain /etc/apparmor.d/profile-name
+```
+
+## Check the Logs
+### On the host machine, check the AppArmor logs to see the reported violations
+```
+sudo dmesg | grep -i apparmor
+```
+
