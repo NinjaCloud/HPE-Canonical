@@ -34,7 +34,7 @@ microk8s kubectl edit svc productpage
 
 ## Enable Kiali Dashboard 
 ```
-microk8s https://raw.githubusercontent.com/istio/istio/master/samples/addons/kiali.yaml
+microk8s kubectl apply -f https://raw.githubusercontent.com/istio/istio/master/samples/addons/kiali.yaml
 ```
 
 ### Kiali application is deployed in istio-system namespace to access it convert kiali clusterIP service to nodeport
@@ -45,5 +45,5 @@ microk8s kubectl edit svc kiali -n istio-system
 
 ## To collect traffic from application Kiali need Prometheus run the following command to install it
 ```
-https://raw.githubusercontent.com/istio/istio/master/samples/addons/prometheus.yaml
+microk8s kubectl apply -f https://raw.githubusercontent.com/istio/istio/master/samples/addons/prometheus.yaml
 ```
