@@ -38,8 +38,9 @@ profile k8s-apparmor-deny-write flags=(attach_disconnected) {
 ```
 
 ### Parse/Load the AppArmor profile into the kernel:
-
+```
 sudo apparmor_parser -r /etc/apparmor.d/deny-profile
+```
 
 ### Check the status of the AppArmor profile to confirm the denial rule:
 
