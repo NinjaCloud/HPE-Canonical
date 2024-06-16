@@ -1,6 +1,6 @@
-#Task 1
+# Task 1
 
-##set up an AppArmor profile on your Kubernetes cluster, enforcing a denial rule on file writes within the secure pod.
+## set up an AppArmor profile on your Kubernetes cluster, enforcing a denial rule on file writes within the secure pod.
 
 ### List the current status of apparmor
 ```
@@ -17,7 +17,7 @@ sudo systemctl enable apparmor && sudo systemctl start apparmor
 sudo service apparmor reload
 ```
 
-###On the Kubernetes Worker Node:
+### On the Kubernetes Worker Node:
 
 ### create the AppArmor profile configuration file:
 
