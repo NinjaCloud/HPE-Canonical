@@ -180,7 +180,7 @@ exit
 
 ## Kubernetes does not allow you to directly remove or update AppArmor annotations on a running pod. This restriction is in place to ensure the security and stability of the system.
 
-## But you can diable the apparmor profile by running following command and then redeploy you application.
+## But you can disable the apparmor profile by running following command and then redeploy you application.
 
 ```
 sudo ln -s /etc/apparmor.d/profile.name /etc/apparmor.d/disable/
