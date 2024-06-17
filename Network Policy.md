@@ -228,3 +228,11 @@ alias calicoctl="microk8s kubectl exec -i -n kube-system calicoctl -- /calicoctl
 ```
 calicoctl ipam show
 ```
+### Try this commands also
+```
+calicoctl get ippools
+calicoctl get networkpolicy
+calicoctl get networkpolicy -n default
+calicoctl get networkpolicy -A
+calicoctl get node
+```
