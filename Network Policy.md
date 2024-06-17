@@ -226,5 +226,5 @@ alias calicoctl="microk8s kubectl exec -i -n kube-system calicoctl -- /calicoctl
 ```
 ### confirm that calicoctl is working fine by running following command:
 ```
-calicoctl ipam list
+calicoctl ipam show
 ```
