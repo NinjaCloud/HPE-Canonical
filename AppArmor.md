@@ -64,7 +64,6 @@ metadata:
   annotations:
     container.apparmor.security.beta.kubernetes.io/ctr-1: localhost/k8s-apparmor-deny-write
 spec:
-  nodeName: <worker-node-name>
   containers:
   - name: ctr-1
     image: busybox
