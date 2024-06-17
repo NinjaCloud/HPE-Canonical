@@ -109,7 +109,7 @@ profile k8s-apparmor-deny-tmp {
   #include <abstractions/base>
   
   # Deny write access to /tmp/
-  /tmp/** rw,
+  deny /tmp/** rw,
   
   # Allow write access to other directories
   /** rw,
