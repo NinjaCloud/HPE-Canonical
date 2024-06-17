@@ -114,5 +114,35 @@ microk8s kubectl apply -f - < pvc-nfs.yaml
 microk8s kubectl describe pvc my-pvc
 ```
 
+### create pod yaml to use PV and PVC
+
+```
+vi mypod.yaml
+```
+
+```
+kind: Pod
+apiVersion: v1
+metadata:
+  name: pod-volume-dynamic
+  labels:
+    app: nginx
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+      volumeMounts:
+      - mountPath: "/var/www/html"
+        name: external
+  volumes:
+    - name: external 
+      persistentVolumeClaim:
+        claimName: my-pvc
+```
+
+```
+microk8s kubectl apply -f mypod.yaml
+```
+
 
 	
