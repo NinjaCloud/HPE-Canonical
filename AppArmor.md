@@ -140,7 +140,6 @@ metadata:
   annotations:
     container.apparmor.security.beta.kubernetes.io/ctr-1: localhost/k8s-apparmor-deny-tmp
 spec:
-  nodeName: <worker-node-name>
   containers:
   - name: ctr-1
     image: busybox
@@ -151,7 +150,7 @@ spec:
 
 ### Apply the YAML file to create the secure pod:
 ```
-kubectl apply -f secure-app2.yaml
+kubectl apply -f secure-pod2.yaml
 ```
 
 ### Access the shell of the secure pod:
