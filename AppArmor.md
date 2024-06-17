@@ -105,7 +105,7 @@ sudo vi  /etc/apparmor.d/deny-tmp-profile
 ```
 #include <tunables/global>
 
-profile k8s-apparmor-deny-test {
+profile k8s-apparmor-deny-tmp {
   #include <abstractions/base>
   file,
   # Deny write access to /tmp/
