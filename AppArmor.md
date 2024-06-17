@@ -117,9 +117,9 @@ profile k8s-apparmor-deny-tmp {
 ```
 
 ### Parse/Load the AppArmor profile into the kernel:
-
+```
 sudo apparmor_parser -r /etc/apparmor.d/deny-tmp-profile
-
+```
 ### Check the status of the AppArmor profile to confirm the denial /tmp/ rule:
 ```
 sudo aa-status 
