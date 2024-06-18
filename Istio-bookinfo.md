@@ -19,6 +19,10 @@ microk8s kubectl apply -f https://raw.githubusercontent.com/istio/istio/master/s
 microk8s kubectl get services
 microk8s kubectl get pods
 ```
+### Create Gateway and Virtual serives 
+```
+microk8s kubectl apply -f https://raw.githubusercontent.com/istio/istio/master/samples/bookinfo/networking/bookinfo-gateway.yaml
+```
 
 ### To confirm that the Bookinfo application is running, send a request to it by a curl command from some pod, for example from ratings:
 
