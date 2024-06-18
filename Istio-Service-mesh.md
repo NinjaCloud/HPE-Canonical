@@ -12,7 +12,7 @@ microk8s status
 
 ### Install the Istio service mesh add-on.
 ```
-microk8s enable Istio
+microk8s enable istio
 ```
 
 ### Verify the status after enabling Istio
