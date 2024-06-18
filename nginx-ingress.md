@@ -1,4 +1,4 @@
-```markdown
+
 # Ingress Controller Setup with Example
 
 ## Enabling Required Add-ons
@@ -93,5 +93,4 @@ Copy the external IP assigned by MetalLB and access the applications using `curl
 ```bash
 curl <ExternalIP>
 curl <ExternalIP>/testpath
-```
-```
+
