@@ -25,16 +25,6 @@ microk8s status
 microk8s kubectl get all --all-namespaces
 ```
 
-### Set up MetalLB for load balancing and configure the IP address range.
-```
-microk8s enable metallb 
-```
-### When you enable this add on you will be asked for an IP address pool that MetalLB will hand out IPs from:
-
-```
-192.168.5.1-192.168.5.100  
-```
-
 
 ### Label the default namespace to enable automatic Istio sidecar injection.
 ```
