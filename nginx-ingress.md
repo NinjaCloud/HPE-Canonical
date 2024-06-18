@@ -12,7 +12,7 @@ microk8s enable community
 ### Step 2: Enable Istio
 Enable Istio if it is not already enabled.
 ```bash
-microk8s enable istio
+microk8s enable ingress
 ```
 
 ### Step 3: Set Up MetalLB for Load Balancing
