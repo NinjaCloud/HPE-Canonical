@@ -40,7 +40,7 @@ Refer to the official installation guide for Landscape: [Ubuntu Landscape Instal
     - You might encounter a security warning (processed unsafe). Proceed to continue.
 
 4. **Complete the setup in the browser:**
-    - **Name:** Ninad Samudre
+    - **Name:** <YourName>
     - **Email:** abc@gmail.com
     - **Passphrase:** Password@123
 
