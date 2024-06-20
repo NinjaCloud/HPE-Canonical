@@ -16,15 +16,11 @@ Refer to the official installation guide for Landscape: [Ubuntu Landscape Instal
 - 30 GB of disk space (recommended instance type: t2.xlarge)
 
 **Networking Requirements:**
-- An IP address and Fully Qualified Domain Name (FQDN)
 - TCP communication allowed for:
   - SSH (typically port 22)
   - HTTP (port 80)
   - HTTPS (port 443)
   - gRPC (port 6554)
-
-**DNS Administration Access:**
-- Required for the domain you will use to access Landscape, if you wish to use LetsEncrypt to obtain an SSL certificate.
 
 ## Install Landscape Server
 
