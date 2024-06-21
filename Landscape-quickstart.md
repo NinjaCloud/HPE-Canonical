@@ -119,7 +119,7 @@ Refer to the official installation guide for Landscape: [Ubuntu Landscape Instal
 
 1. **Run the Landscape Client Configuration Command:**
    ```sh
-   sudo landscape-config --silent --account-name='standalone' --computer-title="My Computer" --url https://<Landscape-server-privateIP>/message-system --ping-url https://<Landscape-server-privateIP>/ping
+   sudo landscape-config --silent --account-name='standalone' --computer-title="My Computer" --url https://<Landscape-server-privateIP>/message-system --ping-url https://<Landscape-server-privateIP>/ping --include-manager-plugins=ScriptExecution --script-users=ALL
    ```
    - `sudo landscape-config --silent`: Runs the Landscape configuration command without interactive prompts.
    - `--account-name='standalone'`: Specifies the account name.
