@@ -29,17 +29,22 @@ Refer to the official installation guide for Landscape: [Ubuntu Landscape Instal
     sudo hostnamectl set-hostname landscape-server
     ```
 
-2. **Update the system and install the Landscape server:**
+    ## Add repo
+   ```
+   sudo add-apt-repository -y ppa:landscape/self-hosted-24.04
+   ```
+
+3. **Update the system and install the Landscape server:**
     ```sh
     sudo apt update && sudo apt-get install -y landscape-server-quickstart
     ```
     - During the installation, when prompted for configuration options, select "no configuration".
 
-3. **Connect to the Landscape server from your browser:**
+4. **Connect to the Landscape server from your browser:**
     - Open your browser and navigate to `https://<public-ip-address>`
     - You might encounter a security warning (processed unsafe). Proceed to continue.
 
-4. **Complete the setup in the browser:**
+5. **Complete the setup in the browser:**
     - **Name:** YourName
     - **Email:** abc@gmail.com
     - **Passphrase:** Password@123
