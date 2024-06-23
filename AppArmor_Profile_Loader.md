@@ -4,7 +4,7 @@
 
 ### Running the AppArmor Profile Loader
 
-### Create the following file on host
+### Create the following files on host
 
 ```
 vi namespace.yaml
