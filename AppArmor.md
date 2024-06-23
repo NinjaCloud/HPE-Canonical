@@ -90,6 +90,12 @@ echo hello > demo.txt
 
 ### Expected output "sh: can't create demo.txt: Permission denied"
 
+### To remove the profile use the following command
+
+```
+sudo apparmor_parser -R /etc/apparmor.d/deny-profile
+```
+
 
 # TASK 2  
 
