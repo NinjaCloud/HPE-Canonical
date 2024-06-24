@@ -29,7 +29,7 @@ sudo vi  /etc/apparmor.d/deny-profile
 
 ```
 #include <tunables/global>
-profile k8s-apparmor-deny-write flags=(attach_disconnected) {
+profile deny-profile flags=(attach_disconnected) {
   #include <abstractions/base>
   file,
   # Deny all file writes.
@@ -62,7 +62,7 @@ kind: Pod
 metadata:
   name: secure-app1
   annotations:
-    container.apparmor.security.beta.kubernetes.io/ctr-1: localhost/k8s-apparmor-deny-write
+    container.apparmor.security.beta.kubernetes.io/ctr-1: localhost/deny-profile
 spec:
   containers:
   - name: ctr-1
