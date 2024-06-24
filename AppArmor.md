@@ -203,6 +203,11 @@ sudo systemctl disable apparmor.service
 sudo systemctl enable apparmor.service
 sudo systemctl start apparmor.service
 ```
+## To install apparmor-utils run the following command
+
+```
+sudo apt install apparmor-utils
+```
 
 ## Set the Profile to Complaining Mode
 ```
