@@ -171,7 +171,7 @@ vi /tmp/demo.txt
 
 ### Try to create file other than /tmp dir .
 
-### You should receive a "Permission denied" error due to the AppArmor profile denying file writes.
+### You should not receive a "Permission denied" error due to the AppArmor profile denying file writes ony tmp dir.
 
 ### Exit the shell of the pod:
 ```
