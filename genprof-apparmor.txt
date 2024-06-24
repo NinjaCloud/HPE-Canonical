@@ -1,0 +1,13 @@
+aa-genprof
+To easily start creating a profile apparmor can help you. It's possible to make apparmor inspect the actions performed by a binary and then let you decide which actions you want to allow or deny.
+You just need to run:
+
+Copy
+sudo aa-genprof /path/to/binary
+Then, in a different console perform all the actions that the binary will usually perform:
+
+Copy
+/path/to/binary -a dosomething
+Then, in the first console press "s" and then in the recorded actions indicate if you want to ignore, allow, or whatever. When you have finished press "f" and the new profile will be created in /etc/apparmor.d/path.to.binary
+
+https://book.hacktricks.xyz/linux-hardening/privilege-escalation/docker-security/apparmor
