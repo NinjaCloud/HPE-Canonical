@@ -111,7 +111,7 @@ sudo vi  /etc/apparmor.d/deny-tmp-profile
 ```
 #include <tunables/global>
 
-profile k8s-apparmor-deny-tmp {
+profile deny-tmp-profile {
   #include <abstractions/base>
   file,
   # Deny write access to /tmp/
@@ -142,7 +142,7 @@ kind: Pod
 metadata:
   name: secure-app2
   annotations:
-    container.apparmor.security.beta.kubernetes.io/ctr-1: localhost/k8s-apparmor-deny-tmp
+    container.apparmor.security.beta.kubernetes.io/ctr-1: localhost/deny-tmp-profile
 spec:
   containers:
   - name: ctr-1
