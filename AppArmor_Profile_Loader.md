@@ -204,7 +204,7 @@ kubectl create -f pod.yaml
 ### Verify that it's running with the new profile:
 
 ```
-kubectl exec nginx-apparmor cat /proc/1/attr/current
+kubectl exec -it nginx-apparmor cat /proc/1/attr/current
 ```
 
 ### Test the profile
